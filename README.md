@@ -14,3 +14,9 @@ Nginx (pronounced "engine-x") is known for its ability to efficiently handle a l
 We are going to be provisioning two EC2 instances running ubuntu 22.04 and install apache webserver in them. We will open port 8000 to allow traffic from anywhere, and finaly update the default page of the webservers to display their public IP address.
 
 Next we will provision another EC2 instance running buntu 22.04, this time we will install Nginx and configure it to act as a load balancer distributing traffic across the webservers.
+
+### 1. Provisioning EC2 Instances
+### 2. Open Port 8000 in the security group of each of our webservers
+### 3. Install nginx on all instances (using apt or yum based on your OS)
+### 4. Configure Apache to serve a page showing its public IP
+### 5. Configuring Nginx as a Load Balancer
