@@ -3,4 +3,4 @@ Implementing Load Balancer with Nginx is a common task in many production enviro
 
 ![Introduction](./img/1.png)
 
-## Introduction to Load Balancing and Nginx
+## A. Introduction to Load Balancing and Nginx
