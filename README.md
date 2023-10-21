@@ -8,7 +8,7 @@ Load balancing is the practice of distributing incoming network traffic or workl
 
 Nginx (pronounced "engine-x") is known for its ability to efficiently handle a large number of concurrent connections and serve web content quickly.
 
-![Load Balancing and Nginx](./img/2.png)
+![Load Balancing and Nginx](./img/2a.png)
 
 ## B. Setting Up a Basic Load Balancer
 We are going to be provisioning two EC2 instances running ubuntu 22.04 and install apache webserver in them. We will open port 8000 to allow traffic from anywhere, and finaly update the default page of the webservers to display their public IP address.
