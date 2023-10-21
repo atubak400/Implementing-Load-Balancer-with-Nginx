@@ -2,7 +2,6 @@
 Implementing Load Balancer with Nginx is a common task in many production environments. 
 
 ![Introduction](./img/1.png)
-![Introduction](./img/2.png)
 
 ## A. Introduction to Load Balancing and Nginx
 Load balancing is the practice of distributing incoming network traffic or workload across multiple servers, services, or resources to ensure optimal utilization of resources, improve response times, maximize throughput, and enhance the reliability and availability of applications and services.
