@@ -46,8 +46,23 @@ To secure web traffic on port 8000, modify the associated security group's rules
 ![Provision EC2 Instances](./img/5.png)
 
 
-### 3. Install nginx on all instances (using apt or yum based on your OS)
+### 3. Install Apache Webserver
 
+Configure Apache to serve a page showing its public IP: Customize Apache's configuration files to create a page that displays the server's public IP address, simplifying the verification of the Apache web server's functionality.
+
+![Provision EC2 Instances](./img/6.png)
+
+> SSH into one of these instances using putty or another terminal client (or use AWS's session manager). 
+
+![Provision EC2 Instances](./img/7.png)
+
+> Update package list by running 
+
+```
+sudo apt update -y &&  sudo apt install apache2 -y
+```
+
+![Provision EC2 Instances](./img/8.png)
 
 
 
