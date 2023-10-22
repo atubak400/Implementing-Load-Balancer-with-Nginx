@@ -177,14 +177,14 @@ _I took a break from this project and had to stop my EC2 instances to prevent ex
 ### 5. Configuring Nginx as a Load Balancer
 Transform Nginx into a load balancer by editing its configuration file, usually found at /etc/nginx/nginx.conf or in separate files under /etc/nginx/conf.d/. Define upstream server groups to distribute traffic among your webservers. Specify load-balancing methods like round-robin or least connections to suit your needs. After configuring Nginx as a load balancer, it will evenly distribute incoming requests among your webservers, enhancing your application's reliability and performance.
 
-> Provision a new EC2 instance running bunt 22.04. Make sure port 80 is opened to accept traffic from anywhere. Your can refer to step 1 through step 2 to refresh your memory.
+> Provision a new EC2 instance running ubuntu 22.04. 
 
 ![Provision EC2 Instances](./img/2b.png)
 
 ![Provision EC2 Instances](./img/16.png)
 
 
-> Make sure port 80 is open in the security group assigned to you ubuntu instance
+> Make sure port 80 is opened to accept traffic from anywhere. 
 
 ![Provision EC2 Instances](./img/17.png)
 
