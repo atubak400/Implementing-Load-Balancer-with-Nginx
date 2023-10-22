@@ -147,6 +147,10 @@ sudo systemctl restart apache2
 
 > When you visit **http://your-public-ip:8000** on your web browser you should find a page like so:
 
+```
+http://your-public-ip:8000
+```
+
 ![Provision EC2 Instances](./img/14.png)
 ![Provision EC2 Instances](./img/15.png)
 
