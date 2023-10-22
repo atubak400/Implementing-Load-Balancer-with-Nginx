@@ -54,11 +54,17 @@ Installing the Apache web server on an Ubuntu server is a fundamental step in se
 > SSH into these instances using putty or another terminal client (or use AWS's session manager). 
 
 * If you're using terminal, navidate to the directory containing your key pair:
-    ```cd ./folder containing key-pair```
+ ```
+ cd ./folder containing key-pair
+ ```
 * Run this command, if necessary, to ensure your key is not publicly viewable:
-    ```chmod 400 docker.pem```
+```
+chmod 400 docker.pem
+```
 * Connect to your instance using its Public DNS:
-    ```ssh -i "key-pair.pem" ubuntu@your-instance-public-dns```
+```
+ssh -i "key-pair.pem" ubuntu@your-instance-public-dns
+```
 * If you're prompted to answer a question, choose `yes`
 
 ![Provision EC2 Instances](./img/7.png)
