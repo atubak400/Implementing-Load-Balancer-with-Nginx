@@ -26,6 +26,8 @@ EC2 instances are created through the AWS Management Console or CLI, allowing yo
 
 ![Provision EC2 Instances](./img/3a.png)
 
+> Instances launched
+
 ![Provision EC2 Instances](./img/3.png)
 
 
