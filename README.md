@@ -168,6 +168,12 @@ http://"your-public-ip":8000
 ![Provision EC2 Instances](./img/14.png)
 ![Provision EC2 Instances](./img/15.png)
 
+
+### Change in my Public IP Addresses
+
+I took a break from this project and had to stop my EC2 instances to prevent excess charges. This resulted in new public IP addresses for the web servers. Please note that **you don't need to change your IP address**. Thank you for your understanding.
+
+
 ### 5. Configuring Nginx as a Load Balancer
 
 
