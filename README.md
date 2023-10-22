@@ -89,5 +89,42 @@ sudo nano /etc/apache2/ports.conf
 
 ![Provision EC2 Instances](./img/10.png)
 
+> Open the file /etc/apache2/sites-available/000-default.conf and change port 80 on the virtualhost to 8000 like the screenshot below:
+
+```
+sudo vi /etc/apache2/sites-available/000-default.conf
+```
+
+![Provision EC2 Instances](./img/11.png)
+
+> Save and exit from the text editor. Restart apache to load the new configuration using the command below:
+
+```
+sudo systemctl restart apache2
+```
+
+> Create a new html file:
+
+```
+sudo nano index.html
+```
+
+> Paste the html file below. Before pasting the html file, get the public IP of your EC2 instance from AWS Management Console and replace the placeholder text for IP address in the html file.
+
+```
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>My EC2 Instance</title>
+        </head>
+        <body>
+            <h1>Welcome to my EC2 instance</h1>
+            <p>Public IP: YOUR_PUBLIC_IP</p>
+        </body>
+        </html>
+```
+
+![Provision EC2 Instances](./img/12.png)
+
 
 ### 5. Configuring Nginx as a Load Balancer
