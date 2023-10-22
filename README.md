@@ -298,5 +298,5 @@ You can see server 1 and server 2 taking turns serving web pages.
 
 
 
-# Congratulations, you hav successfully Implemented Load Balancing with Nginx
+# Congratulations, you have successfully Implemented Load Balancing with Nginx
 
