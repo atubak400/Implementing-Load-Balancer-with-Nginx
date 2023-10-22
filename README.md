@@ -15,8 +15,37 @@ We are going to be provisioning two EC2 instances running ubuntu 22.04 and insta
 
 Next we will provision another EC2 instance running buntu 22.04, this time we will install Nginx and configure it to act as a load balancer distributing traffic across the webservers.
 
-### 1. Provisioning EC2 Instances
+### 1. Provision EC2 Instances
+EC2 instances are created through the AWS Management Console or CLI, allowing you to select configurations and enhance availability by placing them in specific Availability Zones. 
+
+> Open your AWS Management Console, click on EC2. Scroll down the page and click on Launch instance:
+
+![Provision EC2 Instances](./img/2b.png)
+
+> Under Applications and OS Images, click on quick start and click on ubuntu:
+
+![Provision EC2 Instances](./img/3a.png)
+
+![Provision EC2 Instances](./img/3.png)
+
+
 ### 2. Open Port 8000 in the security group of each of our webservers
+
+To secure web traffic on port 8000, modify the associated security group's rules within the AWS EC2 dashboard, ensuring that access is restricted to trusted sources.
+
+> Select your instance, scroll down the security tab
+
+![Provision EC2 Instances](./img/4.png)
+
+> Modify access to all traffic on port 8000
+
+![Provision EC2 Instances](./img/5.png)
+
+
 ### 3. Install nginx on all instances (using apt or yum based on your OS)
+
+
+
+
 ### 4. Configure Apache to serve a page showing its public IP
 ### 5. Configuring Nginx as a Load Balancer
