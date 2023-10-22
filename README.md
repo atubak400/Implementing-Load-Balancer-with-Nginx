@@ -92,7 +92,7 @@ sudo nano /etc/apache2/ports.conf
 > Open the file /etc/apache2/sites-available/000-default.conf and change port 80 on the virtualhost to 8000 like the screenshot below:
 
 ```
-sudo vi /etc/apache2/sites-available/000-default.conf
+sudo nano /etc/apache2/sites-available/000-default.conf
 ```
 
 ![Provision EC2 Instances](./img/11.png)
@@ -126,5 +126,32 @@ sudo nano index.html
 
 ![Provision EC2 Instances](./img/12.png)
 
+> Change file ownership of the index.html file with the command below:
+
+```
+sudo chown www-data:www-data ./index.html
+```
+
+> Overriding the Default html file of Apache Webserver:
+
+```
+sudo cp -f ./index.html /var/www/html/index.html
+```
+
+> Restart the webserver to load the new configuration using the command below:
+
+```
+sudo systemctl restart apache2
+```
+![Provision EC2 Instances](./img/13.png)
+
+> You should find a page on the browser like so:
+
+![Provision EC2 Instances](./img/14.png)
+![Provision EC2 Instances](./img/15.png)
 
 ### 5. Configuring Nginx as a Load Balancer
+
+
+
+
