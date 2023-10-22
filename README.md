@@ -69,7 +69,7 @@ ssh -i "key-pair.pem" ubuntu@your-instance-public-dns
 
 ![Provision EC2 Instances](./img/7.png)
 
-> Update package list by running 
+> Install Apache into the instance using the command below:
 
 ```
 sudo apt update -y &&  sudo apt install apache2 -y
@@ -175,7 +175,7 @@ _I took a break from this project and had to stop my EC2 instances to prevent ex
 
 
 ### 5. Configuring Nginx as a Load Balancer
-Transform Nginx into a load balancer by editing its configuration file, usually found at /etc/nginx/nginx.conf or in separate files under /etc/nginx/conf.d/. Define upstream server groups to distribute traffic among your webservers. Specify load-balancing methods like round-robin or least connections to suit your needs. After configuring Nginx as a load balancer, it will evenly distribute incoming requests among your webservers, enhancing your application's reliability and performance.
+Integrating Nginx as a load balancer on your instance is a pivotal step in creating a high-availability web hosting environment. This configuration ensures that incoming web traffic is efficiently distributed across multiple web servers, improving the performance and reliability of your applications. You can install Nginx with the following command:
 
 > Provision a new EC2 instance running ubuntu 22.04. 
 
@@ -189,3 +189,114 @@ Transform Nginx into a load balancer by editing its configuration file, usually 
 ![Provision EC2 Instances](./img/17.png)
 
 ![Provision EC2 Instances](./img/18.png)
+
+> Instances launched
+
+![Provision EC2 Instances](./img/19.png)
+
+> Next SSH into the instance
+
+* If you're using your local terminal, navigate to the directory containing your key pair:
+ ```
+ cd ./folder-containing-key-pair
+ ```
+* Run this command, if necessary, to ensure your key is not publicly viewable:
+```
+chmod 400 docker.pem
+```
+* Connect to your instance using its Public DNS:
+```
+ssh -i "key-pair.pem" ubuntu@your-instance-public-dns
+```
+* If you're prompted to answer a question, choose `yes`
+
+![Provision EC2 Instances](./img/20.png)
+
+> Install Nginx into the instance using the command below:
+
+```
+sudo apt update -y && sudo apt install nginx -y
+```
+
+![Provision EC2 Instances](./img/21.png)
+
+> Verify that Nginx is installed with the command below:
+
+```
+sudo systemctl status nginx
+```
+
+![Provision EC2 Instances](./img/22.png)
+
+> Open Nginx configuration file with the command below:
+
+```
+sudo nano /etc/nginx/conf.d/loadbalancer.conf
+```
+
+> Paste the configuration file below to configure nginx to act like a load balancer. A screenshot of an example config file is shown below:
+
+```
+        upstream backend_servers {
+
+            # your are to replace the public IP and Port to that of your webservers
+            server 127.0.0.1:8000; # public IP and port for webserser 1
+            server 127.0.0.1:8000; # public IP and port for webserver 2
+
+        }
+
+        server {
+            listen 80;
+            server_name <your load balancer's public IP addres>; # provide your load balancers public IP address
+
+            location / {
+                proxy_pass http://backend_servers;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            }
+        }
+```
+
+* Make sure you edit the file and provide necessary information like your server IP address etc.
+
+* **upstream backend_servers** defines a group of backend servers. The **server** lines inside the **upstream** block list the addresses and ports of your backend servers. **proxy_pass** inside the location block sets up the load balancing, passing the requests to the backend servers.
+
+* **The proxy_set_header** lines pass necessary headers to the backend servers to correctly handle the requests
+
+> Save and close the editor by pressing `CTRL+X`, then confirm saving changes by typing `Y` and hitting Enter.
+
+![Provision EC2 Instances](./img/23.png)
+
+> Test your configuration with the command below:
+
+```
+sudo nginx -t
+```
+
+![Provision EC2 Instances](./img/24.png)
+
+
+> If there is no error, then restart the Nginx service using this command:
+
+```
+sudo systemctl restart nginx
+```
+
+### Now we have our load balancer setup!
+Now let's test it out by accessing the URL `http://<Public IP Address>:80` in a browser or use curl from
+> Now that our load balancer is set up, let's test it by accessing the Load Balancer's Public DNS name from a web browser. We should see server 1 and server 2 taking turns serving web pages: 
+
+```
+http://<Load Balancer Public IP Address>:80
+```
+![Provision EC2 Instances](./img/25.png)
+
+![Provision EC2 Instances](./img/26.png)
+
+You can see server 1 and server 2 taking turns serving web pages.
+
+
+
+# Congratulations, you hav successfully Implemented Load Balancing with Nginx
+
