@@ -53,9 +53,9 @@ Installing the Apache web server on an Ubuntu server is a fundamental step in se
 
 > SSH into these instances using putty or another terminal client (or use AWS's session manager). 
 
-* If you're using terminal, navidate to the directory containing your key pair:
+* If you're using your local terminal, navigate to the directory containing your key pair:
  ```
- cd ./folder containing key-pair
+ cd ./folder-containing-key-pair
  ```
 * Run this command, if necessary, to ensure your key is not publicly viewable:
 ```
