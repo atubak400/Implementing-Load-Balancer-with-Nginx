@@ -52,7 +52,7 @@ Configure Apache to serve a page showing its public IP: Customize Apache's confi
 
 ![Provision EC2 Instances](./img/6.png)
 
-> SSH into one of these instances using putty or another terminal client (or use AWS's session manager). 
+> SSH into these instances using putty or another terminal client (or use AWS's session manager). 
 
 ![Provision EC2 Instances](./img/7.png)
 
@@ -64,6 +64,13 @@ sudo apt update -y &&  sudo apt install apache2 -y
 
 ![Provision EC2 Instances](./img/8.png)
 
+> Verify that apache is running using the command below
+
+```
+sudo systemctl status apache2
+```
+
+![Provision EC2 Instances](./img/9.png)
 
 
 ### 4. Configure Apache to serve a page showing its public IP
