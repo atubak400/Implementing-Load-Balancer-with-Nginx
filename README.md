@@ -35,11 +35,11 @@ EC2 instances are created through the AWS Management Console or CLI, allowing yo
 
 To secure web traffic on port 8000, modify the associated security group's rules within the AWS EC2 dashboard, ensuring that access is restricted to trusted sources.
 
-> Select your instance, scroll down the security tab
+> Select your instance, scroll down the security tab, and select instance security group
 
 ![Provision EC2 Instances](./img/4.png)
 
-> Modify access to all traffic on port 8000
+> Modify access to allow traffic on port 8000
 
 ![Provision EC2 Instances](./img/5.png)
 
