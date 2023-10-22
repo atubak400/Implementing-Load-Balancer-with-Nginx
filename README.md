@@ -175,7 +175,13 @@ _I took a break from this project and had to stop my EC2 instances to prevent ex
 
 
 ### 5. Configuring Nginx as a Load Balancer
-Integrating Nginx as a load balancer on your instance is a pivotal step in creating a high-availability web hosting environment. This configuration ensures that incoming web traffic is efficiently distributed across multiple web servers, improving the performance and reliability of your applications. You can install Nginx with the following command:
+
+Integrating Nginx as a load balancer on your instance is a pivotal step in creating a high-availability web hosting environment.
+
+![Provision EC2 Instances](./img/16a.png)
+
+This configuration ensures that incoming web traffic is efficiently distributed across multiple web servers, improving the performance and reliability of your applications. You can install Nginx with the following command:
+
 
 > Provision a new EC2 instance running ubuntu 22.04. 
 
@@ -190,7 +196,7 @@ Integrating Nginx as a load balancer on your instance is a pivotal step in creat
 
 ![Provision EC2 Instances](./img/18.png)
 
-> Instances launched
+> Instance launched
 
 ![Provision EC2 Instances](./img/19.png)
 
