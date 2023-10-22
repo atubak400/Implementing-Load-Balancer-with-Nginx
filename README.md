@@ -284,11 +284,11 @@ sudo systemctl restart nginx
 ```
 
 ### Now we have our load balancer setup!
-Now let's test it out by accessing the URL `http://<Public IP Address>:80` in a browser or use curl from
+
 > Now that our load balancer is set up, let's test it by accessing the Load Balancer's Public DNS name from a web browser. We should see server 1 and server 2 taking turns serving web pages: 
 
 ```
-http://<Load Balancer Public IP Address>:80
+http://<Load-Balancer-Public-IP-Address>:80
 ```
 ![Provision EC2 Instances](./img/25.png)
 
