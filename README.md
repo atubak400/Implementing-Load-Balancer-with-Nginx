@@ -47,8 +47,7 @@ To secure web traffic on port 8000, modify the associated security group's rules
 
 
 ### 3. Install Apache Webserver
-
-Configure Apache to serve a page showing its public IP: Customize Apache's configuration files to create a page that displays the server's public IP address, simplifying the verification of the Apache web server's functionality.
+Installing the Apache web server on an Ubuntu server is a fundamental step in setting up a web hosting environment. This process ensures that your server can serve web content, making it accessible to users over the internet.
 
 ![Provision EC2 Instances](./img/6.png)
 
@@ -74,4 +73,12 @@ sudo systemctl status apache2
 
 
 ### 4. Configure Apache to serve a page showing its public IP
+
+Configure Apache to serve a page showing its public IP: Customize Apache's configuration files to create a page that displays the server's public IP address, simplifying the verification of the Apache web server's functionality.
+
+We will start by configuring Apache webserver to serve content on port 8000 instead of its default which is port 80. Then we will create a new index.html file. The file will contain code to display the public IP of the EC2 instance. We will then override apache webserver's default html file with our new file.
+
+> Create an index.html file with content as shown below:
+
+
 ### 5. Configuring Nginx as a Load Balancer
