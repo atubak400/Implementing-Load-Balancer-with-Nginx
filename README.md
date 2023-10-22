@@ -70,7 +70,7 @@ sudo apt update -y &&  sudo apt install apache2 -y
 sudo systemctl status apache2
 ```
 
-![Provision EC2 Instances](./img/9.png)
+![Provision EC2 Instances](./img/9a.png)
 
 
 ### 4. Configure Apache to serve a page showing its public IP
