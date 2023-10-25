@@ -59,7 +59,7 @@ Installing the Apache web server on an Ubuntu server is a fundamental step in se
  ```
 * Run this command, if necessary, to ensure your key is not publicly viewable:
 ```
-chmod 400 docker.pem
+chmod 400 key-pair.pem
 ```
 * Connect to your instance using its Public DNS:
 ```
